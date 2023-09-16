@@ -10,9 +10,7 @@ function App() {
   const [score, setScore] = useState(0);
 
   function handleStart(value) {
-    console.log(value);
     setStart(value);
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   return (

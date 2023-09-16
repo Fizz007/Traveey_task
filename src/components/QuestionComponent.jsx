@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Radio, RadioGroup, Text } from '@chakra-ui/react'
+import { Box, Radio, RadioGroup } from '@chakra-ui/react'
 
 const QuestionComponent = ({ que, submit, submission }) => {
-  console.log(que)
+  
   return (
     <>
-   
 
       <div className="font-bold text-2xl">{que.category}</div>
       <div className="text-sm">{que.difficulty}</div>
@@ -17,9 +16,9 @@ const QuestionComponent = ({ que, submit, submission }) => {
                     onChange={(res) => submit(res)}
                 >
                     {
-                        typeof que.options !== 'undefined' &&
+                         que.options !== 'undefined' &&
                         que.options.map((option, index) => (
-                                <Box key={index} mt="16px">
+                                <Box key={index} className="mt-[16px]">
                                     <Radio value={option}>{option}</Radio>
                                 </Box>
                             )
@@ -31,9 +30,9 @@ const QuestionComponent = ({ que, submit, submission }) => {
                     value={submission}
                 >
                     {
-                        typeof que.options !== 'undefined' &&
+                         que.options !== 'undefined' &&
                         que.options.map((option, index) => (
-                                <Box key={index} mt="16px">
+                                <Box key={index} className="mt-[16px]">
                                     <Radio value={option}>{option}</Radio>
                                 </Box>
                             )

@@ -40,6 +40,7 @@ const Questions = ({ finish, score }) => {
     fetchData();
   }, []);
 
+  console.log(submission)
   return (
     <>
       <div className="h-[100vh] bg-gray-800 text-white">
@@ -59,6 +60,7 @@ const Questions = ({ finish, score }) => {
           )}
         </div>
         <div className="flex justify-between mx-auto gap-16 w-[200px]">
+
           <button
             className={`bg-white p-2 rounded-lg text-gray-500 cursor-pointer ${
               curr <= 0 ? "opacity-50 pointer-events-none" : ""
@@ -68,6 +70,7 @@ const Questions = ({ finish, score }) => {
           >
             <AiOutlineDoubleLeft size={25} />
           </button>
+
           {curr === questions.length - 1 &&
           finalSubmission[finalSubmission.length - 1] !== "" ? (
             <button
@@ -75,8 +78,13 @@ const Questions = ({ finish, score }) => {
               onClick={() => {
                 let s = 0;
                 questions.forEach((q, index) => {
-                  if (q.correct_answer === finalSubmission[index]) s += 5;
-                  else s -= 1;
+                  // if (q.correct_answer === finalSubmission[index]){
+                  //   s += 5;
+                  // } else{
+                  //   s -= 1;
+                  // }
+                  (q.correct_answer === finalSubmission[index]) ? s+=5 : s-=1 
+                  
                 });
                 // console.log(questions.map(q => q.correct_answer));
                 // console.log(finalSubmission);
